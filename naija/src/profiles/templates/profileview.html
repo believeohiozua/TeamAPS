@@ -1,0 +1,13 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<br/>
+<br/>
+<hr/>
+	<img src="{{MEDIA_URL}}{{ image }}" />
+	<img src="{{ user.Document.document.url}}" width ="200" />
+	{{ user.email }}
+	
+{% endblock %}

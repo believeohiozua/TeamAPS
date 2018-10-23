@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content  %}
+
+{% if request.user.is_authenticated %}
+<br/>
+<br/>
+
+<div class="row">
+          <div class="col-md-4">
+            
+					<h3> 
+					DEAR <strong> {{request.user}} </strong> <br />   
+					<table>
+							<tr>
+								<th>YOUR WALLET BALANCE IS:</th>
+							</tr>
+							<tr>
+								<td><br/>|0.00 APS| </td>
+							</tr>
+					</table>
+					<br /> <a  href="{% url 'deposit' %}" class="btn btn-info btn-lg" >CLICK TO  MAKE DEPOSIT</a> 
+
+					</h3
+								
+			
+			
+			
+          </div>
+<div class="col-md-4">
+	
+	
+	
+	<div id=""   >
+           <div class="overlay">
+ <div class="container set-pad">
+      <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line" >{{title}}  </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+					 {% if confirm_message %}
+					 <p> {{confirm_message}}</p>
+					 
+                      
+                         </p>
+                 </div>
+				
+             </div>
+			
+             <!--/.HEADER LINE END-->
+           <div class="row set-row-pad"  data-scroll-reveal="enter from the bottom after 0.5s" >
+           
+  <div class = 'col-md-5 col-md-offset-4'>             
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                   {% endif %}
+				   {% if form %}
+				  
+				   <form method = 'POST' action = ''> {% csrf_token %}
+			<div class="form-group">
+				<div class="form-group">
+					{{form|crispy}}
+				
+                        </div>
+                        
+						 <div class = 'col-md-8 col-md-offset-2'>
+                    <button type="submit" value ='submit form' class="btn btn-info btn-block btn-lg">SUBMIT</button>
+                       </div>
+		
+                    </form>
+				</div>
+			</div>
+				{% endif %}
+              
+	 </div>
+	
+	
+	
+	
+	
+	
+	
+          </div>
+          <div class="col-md-0">
+      
+	  {% else %}
+	  <div class="container set-pad">
+<br/>
+<br/>
+<br/>
+<h2> YOU MUST LOGIN TO ACCESS THIS SERVICE </h2>
+<form class="login" method="POST" action="{% url 'account_login' %}">
+			{% csrf_token %}
+		<div id="div_id_login" class="form-group"> <label for="id_login" class="control-label  requiredField">
+            Login<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="text" name="login" placeholder="Username or e-mail" autofocus="autofocus" class="textinput textInput form-control" required="" id="id_login"> </div> 
+			
+		</div> 
+		
+		<div id="div_id_password" class="form-group"> <label for="id_password" class="control-label  requiredField">
+            Password<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="password" name="password" placeholder="Password" class="textinput textInput form-control" required="" id="id_password"> </div> 
+		</div> <div class="form-group"> <div id="div_id_remember" class="checkbox">
+			<label for="id_remember" class=""> <input type="checkbox" name="remember" class="checkboxinput" id="id_remember">
+				Remember Me
+            </label> </div> </div>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_signup' %}">SIGN UP</a>
+		<button class="primaryAction" type="submit">Sign In</button>
+		</form>
+		{% endif %}	  
+	 
+          </div>
+ </div>
+
+	    {% endblock%}
+
+	  
+ 

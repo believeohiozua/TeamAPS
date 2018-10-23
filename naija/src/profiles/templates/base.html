@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>APS MVP</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link rel = 'stylesheet' href= '{% static "css/bootstrap.css"%}'/>
+    <!-- FONT AWESOME CSS -->
+<link rel='stylesheet' href='{% static "css/font-awesome.min.css"%}' />
+     <!-- FLEXSLIDER CSS -->
+<link rel='stylesheet'  href='{% static "css/flexslider.css"%}' />
+    <!-- CUSTOM STYLE CSS -->
+    <link rel='stylesheet'   href='{% static "css/style.css"%}'/> 
+	<!-- CUSTOM STYLEZ CSS -->
+    <link rel='stylesheet'   href='{% static "css/stylez.css"%}'/>
+	 <link rel='stylesheet'   href='{% static "css/extra.css"%}'/>
+	
+</head>
+<body>
+  <!-- FOOTER SECTION END-->
+
+	
+
+
+   
+   
+   
+   
+   
+   
+
+    
+
+
+<!--  Jquery Core Script -->
+    <script src='{% static "javascript/jquery-1.10.2.js" %}'></script>
+    <!--  Core Bootstrap Script -->
+    <script src='{% static "javascript/bootstrap.js" %}'></script>
+    <!--  Flexslider Scripts --> 
+         <script src='{% static "javascript/jquery.flexslider.js" %}'></script>
+     <!--  Scrolling Reveal Script -->
+    <script src='{% static "javascript/scrollReveal.js" %}'></script>
+    <!--  Scroll Scripts --> 
+    <script src='{% static "javascript/jquery.easing.min.js" %}'></script>
+    <!--  Custom Scripts --> 
+         <script src='{% static "javascript/custom.js" %}'></script>	
+     
+   
+ 
+</body>
+</html>
+{% include 'navbar.html'%}
+		 
+ {% block content  %}
+ {% endblock%}
+</head>
+
+

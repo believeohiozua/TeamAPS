@@ -1,0 +1,129 @@
+             {% extends 'base.html' %}
+			 {% load staticfiles %}
+			 
+			 {% block content  %}
+ 
+		  <div id="course-sec" class="container set-pad">
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line">ABOUT US </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+                      Do well to visit the link for detailed infomation
+                         </p>
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE END #######################################################################-->
+
+
+           <div class="row set-row-pad" >
+           <div class="col-lg-6 col-md-10 col-sm-6 " data-scroll-reveal="enter from the bottom after 0.4s" >
+                 <img src="{% static 'img/star.jpg' %}" class="img-thumbnail" />
+           </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                   <div class="panel-group" id="accordion">
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.5s">
+                            <div class="panel-heading" >
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="collapsed">
+                                  <strong>   FAQs <strong>  
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" style="height: 0px;">
+                                <div class="panel-body">
+                                 <p><a  href="{% url 'FAQs' %}">What is APS?</a></p>	
+								<p><a  href="{% url 'FAQs' %}">Can I save with airtime on my APS account?</a></p>
+								<p><a  href="{% url 'FAQs' %}">Do I pay for bank transfers?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How long does bank transfers take?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I transfer to my bank account?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How much is the deposit charge?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I deposit airtime on my phone?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I open an account?</a></p>
+								
+								</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.7s">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">
+                                      <strong>   PRIVACY POLICY</strong> 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse" style="height: 0px;">
+                                <div class="panel-body">
+                                   								
+					<p><a  href="{% url 'FAQs' %}"> Below are the policies guiding our site usage: </a></p>
+					<div class ="col">
+							<p> Your personal information (emails, name and bank details) provided to APS during sign up belongs to you by default. </p>
+							<p> You have full access over your account. </p>
+							<p> APS has the best security practice, therefore your personal details are well secured. </p>
+							<p> On no account will your details be made known or given to any third party unless if obligated by the relevant authorities. </p>
+							<p> We will not bear the consequences of whatever happens to your account when you reveal your login information to anyone. </p>
+							<p> Always report to APS by mailing us via getaps@gmail.com, if any fraudulent activity or suspiciousness as regards your account is being noticed.</p>
+					</div>
+							
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.9s">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">
+                                        <strong>   TERMS AND CONDITIONS</strong> 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse"  style="height: 0px;">
+                                <div class="panel-body">
+								
+								<p><a  href="{% url 'FAQs' %}">Sign up</a></p>
+								<p><a  href="{% url 'FAQs' %}">Deposits</a></p>
+								<p><a  href="{% url 'FAQs' %}">Responsibility</a></p>
+								<p><a  href="{% url 'FAQs' %}">Fees and Charges</a></p>
+								<p><a  href="{% url 'FAQs' %}">Spamming</a></p>
+								<p><a  href="{% url 'FAQs' %}">Multiple Accounts</a></p>
+								<p><a  href="{% url 'FAQs' %}">Civility</a></p>
+								<p><a  href="{% url 'FAQs' %}">Contacts</a></p>
+								<p><a  href="{% url 'FAQs' %}">Third Party Transactions</a></p>
+								<p><a  href="{% url 'FAQs' %}">Security</a></p>
+								
+                                </div>
+                            </div>
+                        </div>
+						
+						
+						
+						<div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.9s">
+                            
+                            <div id="collapse3" class="panel-collapse collapse"  style="height: 0px;">
+                                <div class="panel-body">
+                                    <p>
+                                       .
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="alert alert-info" data-scroll-reveal="enter from the bottom after 1.1s" >
+                       <span style="font-size:40px;">
+                          
+						    <a data-toggle="collapse" data-parent="#accordion" href="{% url 'FAQs' %}" class="collapsed">
+                                      <h4> CLICK FOR MORE INFORMATION</h4> 
+                                    </a>
+                           
+                       </span>
+                   </div>
+           </div>
+             
+     </div>   
+                 
+               </div>
+</div>
+			 
+</div>
+      <!-- COURSES SECTION END-->
+	  
+	  {% endblock%}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content  %}
+
+{% if request.user.is_authenticated %}
+<br/>
+<br/>
+
+<div class="row">
+          <div class="col-md-4">
+            
+					<h3> 
+					DEAR <strong> {{request.user}} </strong> <br />   
+					<table>
+							<tr>
+								<th>YOUR WALLET BALANCE IS:</th>
+							</tr>
+							<tr>
+								<td><br/>|0.00 APS| </td>
+							</tr>
+					</table>
+					<br /> <a  href="{% url 'purchase' %}" class="btn btn-info btn-lg" >CLICK TO MAKE PURCHASE</a> 
+
+					</h3
+								
+			
+			
+			
+          </div>
+<div class="col-md-4">
+	<div class="container set-pad">
+      <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+				 
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line" >{{title}}  </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+					 {% if confirm_message %}
+					 <p> {{confirm_message}}</p>
+					 
+                      
+                     </p>
+                 </div>
+				
+             </div>
+			
+             <!--/.HEADER LINE END-->
+ <div class="row set-row-pad"  data-scroll-reveal="enter from the bottom after 0.5s" >
+           
+  <div class = 'col-md-5 col-md-offset-4'>             
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                   {% endif %}
+				   {% if form %}
+				  
+				   <form method="POST" action=""> 
+				   	{% csrf_token %}
+			<div class="form-group">
+				<div class="form-group">
+					
+
+<div id="div_id_network_select" class="form-group"> <label for="id_network_select" class="control-label  requiredField">
+                Select Network<span class="asteriskField">*</span> </label> <div class="controls "> <select name="network_select" class="select form-control" id="id_network_select"> <option value="mtn">MTN</option> <option value="glo">GLO</option> <option value="airtel">AIRTEL</option> <option value="9mobile">9MOBILE</option> <option value="visafone">VISAFONE</option>
+
+</select> </div> </div> <div id="div_id_Amount" class="form-group"> <label for="id_Amount" class="control-label  requiredField">
+                Amount<span class="asteriskField">*</span> </label> <div class="controls "> <input type="number" name="Amount" min="50" max="50000" class="numberinput form-control" required="" id="id_Amount"> </div> </div> <div id="div_id_Voucher_Pin" class="form-group"> <label for="id_Voucher_Pin" class="control-label  requiredField">
+                Voucher pin<span class="asteriskField">*</span> </label> <div class="controls "> <input type="number" name="Voucher_Pin" class="numberinput form-control" required="" id="id_Voucher_Pin"> <p id="hint_id_Voucher_Pin" class="help-block">enter recharge card pin</p> </div> </div> <div id="div_id_Voucher_serial_number" class="form-group"> <label for="id_Voucher_serial_number" class="control-label  requiredField">
+                Voucher serial number<span class="asteriskField">*</span> </label> <div class="controls "> <input type="number" name="Voucher_serial_number" class="numberinput form-control" required="" id="id_Voucher_serial_number"> <p id="hint_id_Voucher_serial_number" class="help-block">Enter recharge serial number</p> </div> </div> <div id="div_id_select_bank" class="form-group"> <label for="id_select_bank" class="control-label  requiredField">
+                select bank?<span class="asteriskField">*</span> </label> <div class="controls "> <select name="select_bank" class="select form-control" id="id_select_bank"> <option value="Access Bank Plc">Access Bank Plc</option> <option value="Diamond Bank Plc">Diamond Bank Plc</option> <option value="Fidelity Bank Plc">Fidelity Bank Plc</option> <option value="First City Monument Bank Plc">First City Monument Bank Plc</option> <option value="First Bank of Nigeria Limited">First Bank of Nigeria Limited</option> <option value="Guaranty Trust Bank Plc">Guaranty Trust Bank Plc</option> <option value="Union Bank of Nigeria Plc">Union Bank of Nigeria Plc</option> <option value="United Bank for Africa Plc">United Bank for Africa Plc</option> <option value="Zenith Bank Plc">Zenith Bank Plc</option> <option value="Citi Bank Nigeria Limited">Citi Bank Nigeria Limited</option> <option value="Ecobank Nigeria Plc">Ecobank Nigeria Plc</option> <option value="Heritage Banking Company Limited">Heritage Banking Company Limited</option> <option value="Keystone Bank Limited">Keystone Bank Limited</option> <option value="Polaris Bank Limited">Polaris Bank Limited</option> <option value="Stanbic IBTC Bank Plc">Stanbic IBTC Bank Plc</option> <option value="Standard Chartered">Standard Chartered</option> <option value="Sterling Bank Plc">Sterling Bank Plc</option> <option value="Unity Bank Plc">Unity Bank Plc</option> <option value="Wema Bank Plc">Wema Bank Plc</option>
+
+</select> </div> </div> <div id="div_id_bank_account_name" class="form-group"> <label for="id_bank_account_name" class="control-label  requiredField">
+                Bank account name<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="bank_account_name" maxlength="20" class="textinput textInput form-control" required="" id="id_bank_account_name"> <p id="hint_id_bank_account_name" class="help-block">enter benefitiary's name</p> </div> </div> <div id="div_id_bank_account_number" class="form-group"> <label for="id_bank_account_number" class="control-label  requiredField">
+                Bank account number<span class="asteriskField">*</span> </label> <div class="controls "> <input type="text" name="bank_account_number" maxlength="20" class="textinput textInput form-control" required="" id="id_bank_account_number"> <p id="hint_id_bank_account_number" class="help-block">enter benefitiary's bank account number</p> </div> </div> <div id="div_id_phone_number" class="form-group"> <label for="id_phone_number" class="control-label  requiredField">
+                Phone number<span class="asteriskField">*</span> </label> <div class="controls "> <input type="number" name="phone_number" class="numberinput form-control" required="" id="id_phone_number"> <p id="hint_id_phone_number" class="help-block">Enter Phone Number</p> </div> </div> <div id="div_id_depositor_name" class="form-group"> <label for="id_depositor_name" class="control-label ">
+                Depositor name
+            </label> <div class="controls "> <input type="text" name="depositor_name" maxlength="20" class="textinput textInput form-control" id="id_depositor_name"> <p id="hint_id_depositor_name" class="help-block">Depositor's name</p> </div> </div>
+
+				
+                        </div>
+                        
+						 <div class="col-md-8 col-md-offset-2">
+                    <button type="submit" value="submit form" class="btn btn-info btn-block btn-lg">SUBMIT</button>
+                       </div>
+		
+                    
+				</div></form>
+				</div>
+			</div>
+				{% endif %}
+              
+	 </div>
+	 
+	 <br />
+	  <br />
+	
+</div>
+          
+    
+ 
+
+           
+           
+			   
+			
+			
+          </div>
+          <div class="col-md-0">
+      
+	  {% else %}
+	  <div class="container set-pad">
+<br/>
+<br/>
+<br/>
+<h2> YOU MUST LOGIN TO ACCESS THIS SERVICE </h2>
+<form class="login" method="POST" action="{% url 'account_login' %}">
+			{% csrf_token %}
+		<div id="div_id_login" class="form-group"> <label for="id_login" class="control-label  requiredField">
+            Login<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="text" name="login" placeholder="Username or e-mail" autofocus="autofocus" class="textinput textInput form-control" required="" id="id_login"> </div> 
+			
+		</div> 
+		
+		<div id="div_id_password" class="form-group"> <label for="id_password" class="control-label  requiredField">
+            Password<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="password" name="password" placeholder="Password" class="textinput textInput form-control" required="" id="id_password"> </div> 
+		</div> <div class="form-group"> <div id="div_id_remember" class="checkbox">
+			<label for="id_remember" class=""> <input type="checkbox" name="remember" class="checkboxinput" id="id_remember">
+				Remember Me
+            </label> </div> </div>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_signup' %}">SIGN UP</a>
+		<button class="primaryAction" type="submit">Sign In</button>
+		</form>
+		{% endif %}	  
+	 
+          </div>
+ </div>
+
+	    {% endblock%}
+
+	  
+ 

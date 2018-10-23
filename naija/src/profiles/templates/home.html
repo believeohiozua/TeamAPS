@@ -1,0 +1,504 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+ {% load crispy_forms_tags %}
+ {% block content  %}
+<style>
+ 	.ggg{
+	background-color:#243756;
+	color: white;
+
+	}
+	
+	.nnn{
+	background-color:#f4f4f4;
+	color:#f4f4f4;
+	}
+	.top_page{
+	background-color: ;
+	
+	}
+	
+	#contact-sec{
+	background: url(static/img/bbb.jpg);
+	background-color:gold;
+	}
+	.col{
+	color: black;
+	}
+ </style>
+ <!-- #####################----END OF STYLES #######################################################################-->
+
+
+      <!--NAVBAR SECTION END-->
+ <!-- #####################----END OF NAVBAR #######################################################################-->	  
+ <div class = "ggg">
+	<div class = "pada">      
+
+	  <div  class="tag-line" >
+         <div class="container">
+           <div class="row  text-center" >
+           
+               <div class="col-lg-12  col-md-12 col-sm-12">
+               
+        <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch"></i> WELCOME APS SOLUTIONS <i class="fa fa-circle-o-notch"></i> </h2>
+                   </div>
+               </div>
+      </div>
+        
+    </div>
+</div>
+<!-- #####################----END OF welcome bar #######################################################################-->
+<div class = "padd"> 
+<div class="row set-row-pad" >
+           <div class="col-lg-6 col-md-5 col-sm-5 " data-scroll-reveal="enter from the bottom after 0.4s" >
+                  <div class="home-sec" id="home" >
+           <div class="overlay">
+ <div class="container">
+           <div class="row text-center " >
+           
+               <div class="col-lg-5  col-md-5 col-sm-5">
+               
+                <div class="flexslider set-flexi" id="main-section" >
+                    <ul class="slides move-me">
+                        <!-- Slider 01 -->
+                        <li>
+                              <h3>Get cheap airtime and data</h3>
+                           <h1>APS SOLUTIONS</h1>
+                            <a  href="{% url 'contact' %}" class="btn btn-info btn-lg" >
+                                CONTACT US 
+                            </a>
+                             <a  href="#features-sec" class="btn btn-success btn-lg" >
+                                FEATURE LIST
+                            </a>
+                        </li>
+                        <!-- End Slider 01 -->
+                        
+                        <!-- Slider 02 -->
+                        <li>
+                            <h3>Your airtime is money</h3>
+                           <h1>MAKE IT COUNT</h1>
+                             <a  href="#{% url 'deposit' %}" class="btn btn-primary btn-lg" >
+                               DEPOSIT 
+                            </a>
+                             <a  href="{% url 'purchase' %}" class="btn btn-danger btn-lg" >
+                                PURCHASE
+                            </a>
+                        </li>
+                        <!-- End Slider 02 -->
+                        
+                        <!-- Slider 03 -->
+                        <li>
+                            <h3>We offer soft Loans for SMEs</h3>
+                           <h1>IT ALL BEGINS WITH A CLICK</h1>
+                             <a  href="{% url 'account_login' %}" class="btn btn-default btn-lg" >
+                                LOGIN
+                            </a>
+                             <a  href="{% url 'account_signup' %}" class="btn btn-info btn-lg" >
+                                SIGN UP
+                            </a>
+                        </li>
+                        <!-- End Slider 03 -->
+                    </ul>
+                </div>
+                   
+     
+              
+              
+            </div>
+                
+               </div>
+                </div>
+           </div>
+           
+       </div>
+           </div>
+		   <div class="col-md-4">
+<div class="top_page">
+          
+			
+			{% if request.user.is_authenticated %}
+			<center>
+			<h1> HELLO!!!   <strong> {{request.user}} <br />YOU ARE WELCOME! </strong></h1>
+			</center>
+			{% else %}
+            <form class="login" method="POST" action="{% url 'account_login' %}">
+			{% csrf_token %}
+		<div id="div_id_login" class="form-group"> <label for="id_login" class="control-label  requiredField">
+            Login<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="text" name="login" placeholder="Username or e-mail" autofocus="autofocus" class="textinput textInput form-control" required="" id="id_login"> </div> 
+			
+		</div> 
+		
+		<div id="div_id_password" class="form-group"> <label for="id_password" class="control-label  requiredField">
+            Password<span class="asteriskField">*</span> </label> 
+			<div class="controls "> <input type="password" name="password" placeholder="Password" class="textinput textInput form-control" required="" id="id_password"> </div> 
+		</div> <div class="form-group"> <div id="div_id_remember" class="checkbox">
+			<label for="id_remember" class=""> <input type="checkbox" name="remember" class="checkboxinput" id="id_remember">
+				Remember Me
+            </label> </div> </div>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+		<a class=" btn btn-link button secondaryAction" href="{% url 'account_signup' %}">SIGN UP</a>
+		
+<button  class="btn btn-info btn-set" type="submit">Sign In</button>
+		</form>
+		{% endif %}
+         </div>
+             
+                 
+                 
+				</div>
+			</div>
+		</div>
+	
+  </div>
+  <!--HOME SECTION END-->
+ <!-- #####################----END OF FIRST DIV #######################################################################-->	   
+    
+	
+	
+	
+	
+	
+    <!--HOME SECTION TAG LINE END #######################################################################-->   
+ <div class = "feature_list">
+		 <div id="features-sec" class="container set-pad" >
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.2s"  class="header-line">FEATURE LIST </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s" >
+                      we go all the way to offer the best quality of service
+                         </p>
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE END #######################################################################-->
+
+
+           <div class="row" >
+           
+               
+                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
+                     <div class="about-div">
+                     <i class="fa fa-paper-plane-o fa-4x icon-round-border" ></i>
+                   <h3 >Make deposit to your bank account from wherever </h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       APS helps you convert excess MTN, Airtel,
+					   9mobile and GLO airtime to funds in your bank account for a little charge.
+					   You can convert airtime pin or airtime loaded on your mobile phone to cash. 
+                       
+                   </p>
+               
+                </div>
+                   </div>
+                   <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                     <div class="about-div">
+                     <i class="fa fa-bolt fa-4x icon-round-border" ></i>
+                   <h3 >Mobile wallet</h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       Users can create eWallets that can be funded via airtime/recharge. 
+					   The User can either make a cash withdrawal from any of our outlets or using an ATM, 
+					   or they can pay for goods and services online via transfers from their wallets. 
+                       <br /><strong>FASTER PAYOUT:</strong> Sending money from your APS account is free and is usually completed within minutes
+                   </p>
+               
+                </div>
+                   </div>
+				   
+                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
+                     <div class="about-div">
+                     <i class="fa fa-magic fa-4x icon-round-border" ></i>
+                   <h3 >Purchase Airtime from all Mobile Operators in Nigeria</h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       Users can purchase airtime from our platform at 5% discount. <br />
+					
+					<br /><a href="{% url 'FAQs' %}" class="btn btn-info btn-set"  >AND LOTS MORE</a>	 <strong>  </strong>
+
+                       
+                   </p>
+              
+                </div>
+                   </div>
+                 
+                 
+               </div>
+             </div>
+</div>
+   <!-- FEATURES SECTION ####################################################################### -->
+<div class ="nnn"> 
+
+ <div id="faculty-sec" >
+    <div class="container set-pad">
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line">OUR PRODUCTS/ SERVICES </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+                     <strong> Your satifaction is our priority</strong>
+                         </p>
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE  #######################################################################-->
+
+           <div class="row" >
+           
+               
+                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
+                     <div class="faculty-div">
+                     <img src="{% static 'img/ONE.jpg' %}"  class="img-rounded" width ="300" height= "200" />
+                   <h3 >AIRTIME CURRENCY </h3>
+                 <hr />
+                         <h4>@ APS we believe your airtime is Money</h4>
+                   <p >
+                       make a bank deposit to your account with a valid recharge card voucher of any network easily, without stress.
+								
+						<br/><a href="{% url 'account_signup' %}" class="btn btn-info btn-set"  >CHECK IT OUT</a>	
+					   </p>
+                </div>
+                   </div>
+                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                     <div class="faculty-div">
+                     <img src="{% static 'img/TWO.jpg' %}"  class="img-rounded" width ="300" height= "200" />
+                   <h3 > HIGH AFFORDABILITY </h3>
+                 <hr />
+                         <h4>Get Cheap Airtime and Data</h4>
+                   <p >
+                       users have the pleasure of being able to purchase airtime and data as low as <strong> 50NGN </strong>anytime and anywhere (even your network providers won't offer you this! 
+                      <br/> <a href="{% url 'account_signup' %}" class="btn btn-info btn-set"  >CHECK IT OUT</a> 
+                   </p>
+				   
+                </div>
+                   </div>
+               <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.6s">
+                     <div class="faculty-div">
+                     <img src="{% static 'img/THREE.jpg' %}" class="img-rounded" width ="300" height= "200" />
+                   <h3 > LOANS</h3>
+                 <hr />
+                         <h4>For SMEs  </h4>
+                   <p >
+                       Users can access soft business loans to drive thier businesses and do lots more . 
+                       <a href="{% url 'account_signup' %}" class="btn btn-info btn-set"  >CHECK IT OUT</a>
+                   </p>
+                </div>
+                   </div>
+                 
+               </div>
+             </div>
+        </div>
+    <!-- FACULTY SECTION END #######################################################################-->
+      <div id="course-sec" class="container set-pad">
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line">ABOUT US </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+                      Do well to visit the link for detailed infomation
+                         </p>
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE END #######################################################################-->
+
+
+           <div class="row set-row-pad" >
+           <div class="col-lg-6 col-md-10 col-sm-6 " data-scroll-reveal="enter from the bottom after 0.4s" >
+                 <img src="{% static 'img/star.jpg' %}" class="img-thumbnail" />
+           </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                   <div class="panel-group" id="accordion">
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.5s">
+                            <div class="panel-heading" >
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="collapsed">
+                                  <strong>   FAQs <strong>  
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse" style="height: 0px;">
+                                <div class="panel-body">
+                                 <p><a  href="{% url 'FAQs' %}">What is APS?</a></p>	
+								<p><a  href="{% url 'FAQs' %}">Can I save with airtime on my APS account?</a></p>
+								<p><a  href="{% url 'FAQs' %}">Do I pay for bank transfers?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How long does bank transfers take?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I transfer to my bank account?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How much is the deposit charge?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I deposit airtime on my phone?</a></p>
+								<p><a  href="{% url 'FAQs' %}">How do I open an account?</a></p>
+								
+								</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.7s">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">
+                                      <strong>   PRIVACY POLICY</strong> 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse" style="height: 0px;">
+                                <div class="panel-body">
+                                   								
+					<p><a  href="{% url 'FAQs' %}"> Below are the policies guiding our site usage: </a></p>
+					<div class ="col">
+							<p> Your personal information (emails, name and bank details) provided to APS during sign up belongs to you by default. </p>
+							<p> You have full access over your account. </p>
+							<p> APS has the best security practice, therefore your personal details are well secured. </p>
+							<p> On no account will your details be made known or given to any third party unless if obligated by the relevant authorities. </p>
+							<p> We will not bear the consequences of whatever happens to your account when you reveal your login information to anyone. </p>
+							<p> Always report to APS by mailing us via getaps@gmail.com, if any fraudulent activity or suspiciousness as regards your account is being noticed.</p>
+					</div>
+							
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.9s">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">
+                                        <strong>   TERMS AND CONDITIONS</strong> 
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse"  style="height: 0px;">
+                                <div class="panel-body">
+								
+								<p><a  href="{% url 'FAQs' %}">Sign up</a></p>
+								<p><a  href="{% url 'FAQs' %}">Deposits</a></p>
+								<p><a  href="{% url 'FAQs' %}">Responsibility</a></p>
+								<p><a  href="{% url 'FAQs' %}">Fees and Charges</a></p>
+								<p><a  href="{% url 'FAQs' %}">Spamming</a></p>
+								<p><a  href="{% url 'FAQs' %}">Multiple Accounts</a></p>
+								<p><a  href="{% url 'FAQs' %}">Civility</a></p>
+								<p><a  href="{% url 'FAQs' %}">Contacts</a></p>
+								<p><a  href="{% url 'FAQs' %}">Third Party Transactions</a></p>
+								<p><a  href="{% url 'FAQs' %}">Security</a></p>
+								
+                                </div>
+                            </div>
+                        </div>
+						
+						
+						
+						<div class="panel panel-default" data-scroll-reveal="enter from the bottom after 0.9s">
+                            
+                            <div id="collapse3" class="panel-collapse collapse"  style="height: 0px;">
+                                <div class="panel-body">
+                                    <p>
+                                       .
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="alert alert-info" data-scroll-reveal="enter from the bottom after 1.1s" >
+                       <span style="font-size:40px;">
+                          
+						    <a data-toggle="collapse" data-parent="#accordion" href="{% url 'FAQs' %}" class="collapsed">
+                                      <h4> CLICK FOR MORE INFORMATION</h4> 
+                                    </a>
+                           
+                       </span>
+                   </div>
+           </div>
+             
+     </div>   
+                 
+               </div>
+</div>
+			 
+</div>
+      <!-- COURSES SECTION END #######################################################################-->
+    <div id="contact-sec"   >
+           <div class="overlay">
+ <div class="container set-pad">
+      <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     <h1 data-scroll-reveal="enter from the bottom after 0.1s" class="header-line" >CONTACT US  </h1>
+                     <p data-scroll-reveal="enter from the bottom after 0.3s">
+                     <p>we are eager to hear from you!
+					 Speak with someone from APS. </p>
+					 <strong>CONTACT US </strong>for all account, deposit, withdrawal, developer or business enquiries
+					 
+					 
+                 </div>
+
+             </div>
+             <!--/.HEADER LINE END #######################################################################-->
+           <div class="row set-row-pad"  data-scroll-reveal="enter from the bottom after 0.5s" >
+           
+               
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+                    <form method="POST" action=""> 
+					{% csrf_token %}
+			<div class="form-group">
+				<div class="form-group">
+					
+
+			<div id="div_id_name" class="form-group"> <label for="id_name" class="control-label ">
+                Name
+            </label> <div class="controls "> <input type="text" name="name" maxlength="20" class="textinput textInput form-control" id="id_name"> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class="control-label  requiredField">
+                Email<span class="asteriskField">*</span> </label> <div class="controls "> <input type="email" name="email" class="emailinput form-control" required="" id="id_email"> </div> </div> <div id="div_id_comment" class="form-group"> <label for="id_comment" class="control-label  requiredField">
+                Comment<span class="asteriskField">*</span> </label> <div class="controls "> <textarea name="comment" cols="40" rows="10" class="textarea form-control" required="" id="id_comment"></textarea> </div> </div>
+
+				
+                        </div>
+                        
+						 <div class="col-md-8 col-md-offset-2">
+                    <button type="submit" value="submit form" class="btn btn-info btn-block btn-lg">SUBMIT</button>
+                       </div>
+		
+                    
+				</div>
+			</form>
+                </div>
+
+               </div>
+                </div>
+          </div> 
+       </div>
+     <div class="container">
+             <div class="row set-row-pad"  >
+    <div class="col-lg-4 col-md-4 col-sm-4   col-lg-offset-1 col-md-offset-1 col-sm-offset-1 " data-scroll-reveal="enter from the bottom after 0.4s">
+
+                    <h2 ><strong>Our Location </strong></h2>
+        <hr />
+                    <div ">
+                        <h4>Warri, delta state</h4>
+                        <h4>Nigeria</h4>
+                        <h4><strong>Call:</strong> 08068363644 </h4> 
+						<h4>We are also available on WhatsApp 
+                        for all enquiries and questions regarding APS <i>WhatsApp</i></h4>
+                
+                        <h4><strong>Email: </strong>Email us: help@getaps.com for account and payment related enquiries
+															  <p>For business and developer enquiries email: business@getaps.com </p></h4>
+						
+                    </div>
+
+
+                </div>
+                 <div class="col-lg-4 col-md-4 col-sm-4   col-lg-offset-1 col-md-offset-1 col-sm-offset-1" data-scroll-reveal="enter from the bottom after 0.4s">
+
+                    <h2 ><strong>Social Conectivity </strong></h2>
+        <hr />
+                    <div >
+                        <a href="www.facebook.com/teamAPS">  <img src="{% static 'img/Facebook.png' %}" alt="" /> </a>
+                     <a href="www.gmailplus.com/teamAPS"> <img src="{% static 'img/Google-plus.png' %}" alt="" /></a>
+                     <a href="www.twitter.com/teamAPS"> <img src="{% static 'img/Twitter.png' %}" alt="" /></a>
+                    </div>
+                    </div>
+
+
+                </div>
+                 </div>
+
+ <!-- CONTACT SECTION  #######################################################################-->
+    <div id="footer">
+          www.teamaps.com | All Rights Reserved |  <a href="{% url 'home' %}" style="color: #fff" target="_blank">Design by :TeamAPS</a>
+    </div>
+{% endblock%}
